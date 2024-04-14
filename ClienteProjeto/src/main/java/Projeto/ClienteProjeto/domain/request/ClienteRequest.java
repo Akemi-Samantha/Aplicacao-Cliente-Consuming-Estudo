@@ -1,20 +1,19 @@
-package Projeto.ClienteProjeto.model.response;
+package Projeto.ClienteProjeto.domain.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-@Setter
-@Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClienteResponse {
+@Builder
+@Setter
+@Getter
 
-    private Long id;
+public class ClienteRequest {
+
     @JsonProperty("Prato")
     private String prato;
     @JsonProperty("Pais")
     private String pais;
-
-
 }
+
