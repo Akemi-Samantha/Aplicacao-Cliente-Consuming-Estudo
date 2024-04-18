@@ -14,11 +14,40 @@ public class CadastroPratoService {
     @Autowired
     private Consuming consuming;
 
+    @Autowired
+    PratoMessagePublisher pratoMessagePublisher;
+
+
+    public ClienteResponse cadastrarPratos(ClienteRequest clienteRequest) {
+        if (clienteRequest.getPrato().isEmpty()|| clienteRequest.getPais().isEmpty()) {
+            throw new ErrorBadRequest("Nome e preço são obrigatórios");
+        }
+        ClienteResponse response = consuming.cadastrarPratos(clienteRequest);
+        pratoMessagePublisher.enviarMensagemPratoCriado(clienteRequest.getPrato());
+        return response;
+
+    }
+
+    public ClienteResponse atualizarPrato(Long id, ClienteRequest clienteRequest) {
+        if (clienteRequest.getPrato().isEmpty() || clienteRequest.getPais().isEmpty()) {
+            throw new ErrorBadRequest("Prato e país são obrigatórios");
+        }
+        try {
+            ClienteResponse response = consuming.atualizarPrato(id, clienteRequest);
+            pratoMessagePublisher.enviarMensagemPratoAtualizado(clienteRequest.getPrato());
+            return response;
+        } catch (Exception e) {
+            throw new ErrorNotFound("Id não encontrado");
+        }
+    }
+
+    /*
     public ClienteResponse cadastrarPratos(ClienteRequest clienteRequest) {
         if (clienteRequest.getPrato().isEmpty()|| clienteRequest.getPais().isEmpty()) {
             throw new ErrorBadRequest("Nome e preço são obrigatórios");
         }
         return consuming.cadastrarPratos(clienteRequest);
+
     }
 
     public ClienteResponse atualizarPrato(Long id, ClienteRequest clienteRequest) {
@@ -31,5 +60,6 @@ public class CadastroPratoService {
             throw new ErrorNotFound("Id não encontrado");
         }
     }
+     */
 
 }

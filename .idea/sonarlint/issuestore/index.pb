@@ -5,10 +5,6 @@ F
 UClienteProjeto/src/main/java/Projeto/ClienteProjeto/controller/ClienteController.java,e\6\e680902bab9fde7303ca2a035434407e93df55fa
 …
 UClienteProjeto/src/main/java/Projeto/ClienteProjeto/openFeingConsuming/Consuming.java,6\0\606dd120b83c46e5f6d95457a185f82a32a84273
-…
-UClienteProjeto/src/main/java/Projeto/ClienteProjeto/model/request/ClienteRequest.java,2\3\2352f1840edccf681711f0277c31dd351e1a95ab
-‡
-WClienteProjeto/src/main/java/Projeto/ClienteProjeto/model/response/ClienteResponse.java,8\7\875718aee23af8aa15f4aaf2ad909eabc9d6d270
 ‚
 RClienteProjeto/src/main/java/Projeto/ClienteProjeto/ClienteProjetoApplication.java,1\0\10bb1d996805e2ef9c0fba3bcbede838c3a172ce
 …
@@ -17,8 +13,6 @@ UClienteProjeto/src/main/java/Projeto/ClienteProjeto/service/CadastroPratoServic
 WClienteProjeto/src/test/java/Projeto/ClienteProjeto/ClienteProjetoApplicationTests.java,e\e\ee7da8f2fbb6b0911b6b022b70b89ea00396042a
 ‚
 RClienteProjeto/src/main/java/Projeto/ClienteProjeto/exception/ErrorBadRequest.java,c\c\ccb4626ab950f6bc9172de92fbe8400694bd04f7
-‚
-RClienteProjeto/src/main/java/Projeto/ClienteProjeto/domain/ResponseExceptions.java,1\c\1c1ed6732adb110815bb2e61ba15fb2e858d5076
 ‹
 [ClienteProjeto/src/main/java/Projeto/ClienteProjeto/domain/response/ResponseExceptions.java,1\d\1d2437e6be838f8e9c29621a37813f6f5d16e199
 ‚
@@ -31,3 +25,13 @@ YClienteProjeto/src/test/java/Projeto/ClienteProjeto/controller/ClienteControlle
 YClienteProjeto/src/test/java/Projeto/ClienteProjeto/service/CadastroPratoServiceTest.java,c\a\cae7fd802bd62cd83b9c9eec7d24563d32a64ec6
 †
 VClienteProjeto/src/main/java/Projeto/ClienteProjeto/domain/request/ClienteRequest.java,e\d\ed7be443d566a58be8d802cb0c059dc52ea1a214
+I
+ClienteProjeto/Dockerfile,f\b\fbc61852f181b9f2eb16fed11735635731ad32af
+Q
+!ClienteProjeto/docker-compose.yml,3\a\3aa9213c684534b1b41f96d93e4113dd2a8508a4
+~
+NClienteProjeto/src/main/java/Projeto/ClienteProjeto/config/RabbitMQConfig.java,9\c\9c69c751767461d83ec4b902e0f5315efbcd388c
+†
+VClienteProjeto/src/main/java/Projeto/ClienteProjeto/service/PratoMessagePublisher.java,4\5\4587337065d35035b6587d0746df36365922dbdb
+…
+UClienteProjeto/src/main/java/Projeto/ClienteProjeto/service/PratoMessageConsumer.java,8\4\84fd459c7c8620eef2610626ca023b7db4cd472a

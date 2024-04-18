@@ -1,0 +1,7 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñãÚÄ8×„øŒï1J$736d3c1b-7550-4be2-b1a5-f7655c03d9b7
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ß„øŒï1J$aaa34844-6702-472a-9f45-e626c021cf67
+m	java:S106"+Replace this use of System.out by a logger.(ÿÁˆ¿8è„øŒï1J$2cf90807-6072-4ec7-a47b-ad432f930363
+–
+java:S1128"SRemove this unused import 'Projeto.ClienteProjeto.domain.response.ClienteResponse'.(Å¾´ô8„ ùŒï1J$f88afee4-c7a8-422c-9eba-ee2be953c24b
