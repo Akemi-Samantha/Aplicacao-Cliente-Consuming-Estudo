@@ -35,3 +35,13 @@ NClienteProjeto/src/main/java/Projeto/ClienteProjeto/config/RabbitMQConfig.java
 VClienteProjeto/src/main/java/Projeto/ClienteProjeto/service/PratoMessagePublisher.java,4\5\4587337065d35035b6587d0746df36365922dbdb
 Ö
 UClienteProjeto/src/main/java/Projeto/ClienteProjeto/service/PratoMessageConsumer.java,8\4\84fd459c7c8620eef2610626ca023b7db4cd472a
+h
+8ClienteProjeto/src/main/resources/application.properties,d\0\d0ae9888437fd104ff4f42303ce35dd29fde7e3a
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+w
+G.idea/sonarlint/issuestore/d/0/d0ae9888437fd104ff4f42303ce35dd29fde7e3a,b\2\b2a8aa1c6ca11bd13b39efc1901a99833628fb06
+Å
+Q.idea/sonarlint/securityhotspotstore/d/0/d0ae9888437fd104ff4f42303ce35dd29fde7e3a,9\1\91db980c92615e8f1001ec2bd7263a22bd0ed725
