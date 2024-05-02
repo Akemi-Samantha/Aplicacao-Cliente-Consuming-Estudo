@@ -1,4 +1,5 @@
 
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ργΪΔJ$f162f9ec-ec16-4103-ae79-8aa16e289d0a
-r	java:S106"+Replace this use of System.out by a logger.(¶Α΄Ϊόÿÿÿÿ8αΥο1J$15a813f3-b555-40c6-8f62-dc4a63673b68
-r	java:S106!"+Replace this use of System.out by a logger.(¶Α΄Ϊόÿÿÿÿ8ΨψΥο1J$c9dc34fc-2100-490f-ab55-6e0e35f1f0c1
+
+java:S1488%"\Immediately return this expression instead of assigning it to the temporary variable "json".(τόβ”8”ϊΙΉπ1J$5c838471-d52c-49c1-a129-5469f1ada718
+	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ργΪΔ8–ϊΙΉπ1J$66b157e9-548c-4fdd-96d5-51e8ad6ce117
+m	java:S106"+Replace this use of System.out by a logger.(δ’«έ8¥ϊΙΉπ1J$ffff9c5c-cb36-4d1f-923b-03ef1143135e

@@ -4,6 +4,7 @@ import Projeto.ClienteProjeto.domain.request.ClienteRequest;
 import Projeto.ClienteProjeto.domain.response.ClienteResponse;
 import Projeto.ClienteProjeto.exception.ErrorBadRequest;
 import Projeto.ClienteProjeto.service.CadastroPratoService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -30,7 +31,7 @@ class ClienteControllerTest {
 
 
     @Test
-    void cadastrarPratos() {
+    void cadastrarPratos() throws JsonProcessingException {
         clienteRequest = new ClienteRequest();
         clienteRequest.setPrato("Feijoada");
         clienteRequest.setPais("Brasil");

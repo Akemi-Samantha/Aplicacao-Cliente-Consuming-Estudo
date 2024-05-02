@@ -1,11 +1,15 @@
 package Projeto.ClienteProjeto.service;
 
+import Projeto.ClienteProjeto.domain.request.ClienteRequest;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+
+@Component
 public class PratoMessagePublisher {
 
     private final RabbitTemplate rabbitTemplate;
@@ -21,15 +25,16 @@ public class PratoMessagePublisher {
         this.routingKey = routingKey;
     }
 
-    public void enviarMensagemPratoCriado(String pratoNome) {
-        String mensagem = "Novo prato cadastrado: " + pratoNome;
-        rabbitTemplate.convertAndSend(exchangeName, routingKey, mensagem);
-        System.out.println("Mensagem enviada: " + mensagem);
+    public void publicherMensagemPratoCriado( ClienteRequest clienteRequest) throws JsonProcessingException {
+            String json = convertToJson(clienteRequest);
+            rabbitTemplate.convertAndSend(exchangeName, routingKey, json);
+            System.out.println("Mensagem enviada para o RabbitMQ " + json);
+
     }
 
-    public void enviarMensagemPratoAtualizado(String pratoNome) {
-        String mensagem = "Prato atualizado: " + pratoNome;
-        rabbitTemplate.convertAndSend(exchangeName, routingKey, mensagem);
-        System.out.println("Mensagem enviada: " + mensagem);
+    private String convertToJson(ClienteRequest clienteRequest) throws JsonProcessingException{
+        ObjectMapper objectMapper = new ObjectMapper();
+        var json = objectMapper.writeValueAsString(clienteRequest);
+        return json;
     }
 }

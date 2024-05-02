@@ -5,6 +5,7 @@ import Projeto.ClienteProjeto.domain.response.ClienteResponse;
 import Projeto.ClienteProjeto.exception.ErrorBadRequest;
 import Projeto.ClienteProjeto.exception.ErrorNotFound;
 import Projeto.ClienteProjeto.openFeingConsuming.Consuming;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,15 +16,16 @@ public class CadastroPratoService {
     private Consuming consuming;
 
     @Autowired
-    PratoMessagePublisher pratoMessagePublisher;
+    private PratoMessagePublisher pratoMessagePublisher;
 
 
-    public ClienteResponse cadastrarPratos(ClienteRequest clienteRequest) {
+
+    public ClienteResponse cadastrarPratos(ClienteRequest clienteRequest) throws JsonProcessingException {
         if (clienteRequest.getPrato().isEmpty()|| clienteRequest.getPais().isEmpty()) {
             throw new ErrorBadRequest("Nome e preço são obrigatórios");
         }
         ClienteResponse response = consuming.cadastrarPratos(clienteRequest);
-        pratoMessagePublisher.enviarMensagemPratoCriado(clienteRequest.getPrato());
+        pratoMessagePublisher.publicherMensagemPratoCriado(clienteRequest);
         return response;
 
     }
@@ -34,32 +36,10 @@ public class CadastroPratoService {
         }
         try {
             ClienteResponse response = consuming.atualizarPrato(id, clienteRequest);
-            pratoMessagePublisher.enviarMensagemPratoAtualizado(clienteRequest.getPrato());
             return response;
         } catch (Exception e) {
             throw new ErrorNotFound("Id não encontrado");
         }
     }
-
-    /*
-    public ClienteResponse cadastrarPratos(ClienteRequest clienteRequest) {
-        if (clienteRequest.getPrato().isEmpty()|| clienteRequest.getPais().isEmpty()) {
-            throw new ErrorBadRequest("Nome e preço são obrigatórios");
-        }
-        return consuming.cadastrarPratos(clienteRequest);
-
-    }
-
-    public ClienteResponse atualizarPrato(Long id, ClienteRequest clienteRequest) {
-        if (clienteRequest.getPrato().isEmpty() || clienteRequest.getPais().isEmpty()) {
-            throw new ErrorBadRequest("Prato e país são obrigatórios");
-        }
-        try {
-            return consuming.atualizarPrato(id, clienteRequest);
-        } catch (Exception e) {
-            throw new ErrorNotFound("Id não encontrado");
-        }
-    }
-     */
 
 }
