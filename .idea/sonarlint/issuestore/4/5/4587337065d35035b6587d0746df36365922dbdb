@@ -1,5 +1,7 @@
 
 
-java:S1488%"\Immediately return this expression instead of assigning it to the temporary variable "json".(τόβ”8”ϊΙΉπ1J$5c838471-d52c-49c1-a129-5469f1ada718
-	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ργΪΔ8–ϊΙΉπ1J$66b157e9-548c-4fdd-96d5-51e8ad6ce117
-m	java:S106"+Replace this use of System.out by a logger.(δ’«έ8¥ϊΙΉπ1J$ffff9c5c-cb36-4d1f-923b-03ef1143135e
+java:S14888"\Immediately return this expression instead of assigning it to the temporary variable "json".(τόβ”8®ϊ€τ1J$96e019cd-3336-4a8b-b6d0-a27a4c6a2137
+	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ργΪΔ8±ϊ€τ1J$d8b90f83-8e21-4f70-95ff-134be8a4c51c
+r	java:S106%"+Replace this use of System.out by a logger.(€ά›γϋÿÿÿÿ8Εϊ€τ1J$19625e27-b191-409b-8926-50928f0fb4d1
+l	java:S106,"+Replace this use of System.out by a logger.(‰ƒ‚8Ηϊ€τ1J$f99d1eec-bb59-455d-9c32-93c50043bd0f
+m	java:S1062"+Replace this use of System.out by a logger.(³Ζ·–8ΦΣ€τ1J$24611fa5-5dfc-4848-8aff-cd3e0a161c5d

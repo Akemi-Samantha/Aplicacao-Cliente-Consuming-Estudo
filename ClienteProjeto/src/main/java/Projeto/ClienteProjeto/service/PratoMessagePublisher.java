@@ -14,21 +14,40 @@ public class PratoMessagePublisher {
 
     private final RabbitTemplate rabbitTemplate;
     private final String exchangeName;
-    private final String routingKey;
+    private final String routingKeyCadastro;
+    private final String routingKeyAtualizacao;
+    private final String routingKeyDeletar;
 
     @Autowired
     public PratoMessagePublisher(RabbitTemplate rabbitTemplate,
                                  @Value("${rabbit.exchange.name}") String exchangeName,
-                                 @Value("${rabbit.routing.key}") String routingKey) {
+                                 @Value("${rabbit.routing.key.cadastro}") String routingKeyCadastro,
+                                 @Value("${rabbit.routing.key.atualizacao}") String routingKeyAtualizacao,
+                                 @Value("${rabbit.routing.key.deletar}") String routingKeyDeletar){
         this.rabbitTemplate = rabbitTemplate;
         this.exchangeName = exchangeName;
-        this.routingKey = routingKey;
+        this.routingKeyCadastro = routingKeyCadastro;
+        this.routingKeyAtualizacao = routingKeyAtualizacao;
+        this.routingKeyDeletar = routingKeyDeletar;
     }
 
     public void publicherMensagemPratoCriado( ClienteRequest clienteRequest) throws JsonProcessingException {
             String json = convertToJson(clienteRequest);
-            rabbitTemplate.convertAndSend(exchangeName, routingKey, json);
-            System.out.println("Mensagem enviada para o RabbitMQ " + json);
+            rabbitTemplate.convertAndSend(exchangeName, routingKeyCadastro, json);
+            System.out.println("Mensagem enviada para o RabbitMQ - Prato Criado " + json);
+
+    }
+
+    public void publicherMensagemPratoAtualizado( ClienteRequest clienteRequest) throws JsonProcessingException {
+        String json = convertToJson(clienteRequest);
+        rabbitTemplate.convertAndSend(exchangeName, routingKeyAtualizacao, json);
+        System.out.println("Mensagem enviada para o RabbitMQ - Prato Atualizado" + json);
+
+    }
+
+    public void publicherMensagemPratoDeletado() {
+        rabbitTemplate.convertAndSend(exchangeName, routingKeyDeletar);
+        System.out.println("Mensagem enviada para o RabbitMQ - Prato Deletado");
 
     }
 

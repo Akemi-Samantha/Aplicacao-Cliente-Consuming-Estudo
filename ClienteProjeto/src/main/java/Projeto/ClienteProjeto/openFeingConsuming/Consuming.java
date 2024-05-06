@@ -14,6 +14,9 @@ public interface Consuming  {
     @PutMapping("/atualizarPrato/{id}")
     ClienteResponse atualizarPrato(@PathVariable Long id, @RequestBody ClienteRequest clienteRequest);
 
+    @DeleteMapping("/deletarPrato/{id}")
+    void deletarPrato(@PathVariable Long id);
+
 
 
 

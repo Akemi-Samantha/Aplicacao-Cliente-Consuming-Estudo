@@ -36,10 +36,20 @@ public class CadastroPratoService {
         }
         try {
             ClienteResponse response = consuming.atualizarPrato(id, clienteRequest);
+            pratoMessagePublisher.publicherMensagemPratoAtualizado(clienteRequest);
             return response;
         } catch (Exception e) {
             throw new ErrorNotFound("Id não encontrado");
         }
     }
 
+    public void deletarPrato(Long id) {
+        try {
+            pratoMessagePublisher.publicherMensagemPratoDeletado();
+            consuming.deletarPrato(id);
+        } catch (Exception e) {
+            throw new ErrorNotFound("Id não encontrado");
+        }
+
+    }
 }

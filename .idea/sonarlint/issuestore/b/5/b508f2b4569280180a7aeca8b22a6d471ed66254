@@ -1,8 +1,6 @@
 
-¨
-java:S1488&"`Immediately return this expression instead of assigning it to the temporary variable "response".(Ò´ä†üÿÿÿÿ8¸à·ñ1J$ceb9ebca-0f26-44b6-b823-e8f1cb830701
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñãÚÄ8ºà·ñ1J$19f3a706-9636-4aae-b3d6-a616e0895f10
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñãÚÄ8¾’€ô1J$e9fe75b1-2646-4f09-83f8-7a33f0fd00e4
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ùıØñ1J$567a5f3d-7084-4628-9c27-eff526c0940f
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¾’€ô1J$585a03ec-2d9a-4ee1-b227-78a6555f2b91
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ùıØñ1J$c0f1ca53-59af-4f2d-9624-6cfae72cbf13
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¾’€ô1J$31a951db-7895-40fa-b4a8-4792991dff80

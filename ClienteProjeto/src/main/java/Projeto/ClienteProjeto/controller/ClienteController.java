@@ -27,4 +27,9 @@ public class ClienteController {
         return cadastrarPratosService.atualizarPrato(id, clienteRequest);
     }
 
+    @DeleteMapping("/deletarPrato/{id}")
+        public void deletarPrato(@PathVariable Long id) {
+        cadastrarPratosService.deletarPrato(id);
+    }
+
 }
