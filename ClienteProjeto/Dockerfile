@@ -1,18 +1,19 @@
 # Etapa 1: Construir o projeto usando Maven
-FROM maven:3.8.4-openjdk-11 as build
+FROM maven:3.8.4-openjdk-11 AS build
 
 # Definir o diretório de trabalho no contêiner
 WORKDIR /app
 
 # Copiar os arquivos pom.xml e o diretório src para o contêiner
-COPY pom.xml .
 COPY src ./src
+COPY pom.xml .
+
 
 # Compilar o projeto e empacotar o artefato
-RUN mvn clean package
+RUN mvn clean install
 
 # Etapa 2: Criar a imagem final com o JRE para executar a aplicação
-FROM openjdk:11-jre-slim
+FROM openjdk:11
 
 # Definir o diretório de trabalho no contêiner
 WORKDIR /app
