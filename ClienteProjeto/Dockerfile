@@ -1,28 +1,28 @@
-# Etapa 1: Construir o projeto usando Maven
-FROM maven:3.8.4-openjdk-11 AS build
+# Etapa de build
+FROM maven:3.8.4-openjdk-11 AS builder
 
-# Definir o diretório de trabalho no contêiner
+# Define the working directory in the container
 WORKDIR /app
 
-# Copiar os arquivos pom.xml e o diretório src para o contêiner
-COPY src ./src
-COPY pom.xml .
+# Copy the source code and the pom.xml file into the container
+COPY src /app/src
+COPY pom.xml /app
 
+# Run Maven build
+RUN mvn clean package
 
-# Compilar o projeto e empacotar o artefato
-RUN mvn clean install
-
-# Etapa 2: Criar a imagem final com o JRE para executar a aplicação
+# Etapa de execução
 FROM openjdk:11
 
-# Definir o diretório de trabalho no contêiner
+# Define the working directory in the container
 WORKDIR /app
 
-# Copiar o artefato da etapa de construção para o diretório de trabalho atual
-COPY --from=build /app/target/*.jar app.jar
+# Copy the built jar file from the builder stage into the container
+# Make sure the path matches the location where the jar file is created
+COPY --from=builder /app/target/*.jar /app.jar
 
-# Definir o comando para executar a aplicação
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Command to run the application
+ENTRYPOINT ["java","-jar","/app.jar"]
 
 
 ## Usar a imagem base do Java (JDK)
