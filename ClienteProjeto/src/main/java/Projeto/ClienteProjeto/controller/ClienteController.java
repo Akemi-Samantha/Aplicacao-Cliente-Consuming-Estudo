@@ -3,6 +3,7 @@ package Projeto.ClienteProjeto.controller;
 import Projeto.ClienteProjeto.domain.request.ClienteRequest;
 import Projeto.ClienteProjeto.domain.response.ClienteResponse;
 import Projeto.ClienteProjeto.service.CadastroPratoService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,13 +18,18 @@ public class ClienteController {
     }
 
     @PostMapping("/adicionarPrato")
-        public ClienteResponse cadastrarPratos(@RequestBody ClienteRequest clienteRequest) {
+        public ClienteResponse cadastrarPratos(@RequestBody ClienteRequest clienteRequest) throws JsonProcessingException {
         return cadastrarPratosService.cadastrarPratos(clienteRequest);
     }
 
     @PutMapping("/atualizarPrato/{id}")
         public ClienteResponse atualizarPrato(@PathVariable Long id, @RequestBody ClienteRequest clienteRequest) {
         return cadastrarPratosService.atualizarPrato(id, clienteRequest);
+    }
+
+    @DeleteMapping("/deletarPrato/{id}")
+        public void deletarPrato(@PathVariable Long id) {
+        cadastrarPratosService.deletarPrato(id);
     }
 
 }

@@ -5,7 +5,7 @@ import Projeto.ClienteProjeto.domain.response.ClienteResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name = "Pratos", url = "http://localhost:8081/prato")
+@FeignClient(name = "Pratos", url = "${url.pratos}")
 public interface Consuming  {
 
     @PostMapping("/adicionarPrato")
@@ -13,6 +13,9 @@ public interface Consuming  {
 
     @PutMapping("/atualizarPrato/{id}")
     ClienteResponse atualizarPrato(@PathVariable Long id, @RequestBody ClienteRequest clienteRequest);
+
+    @DeleteMapping("/deletarPrato/{id}")
+    void deletarPrato(@PathVariable Long id);
 
 
 
